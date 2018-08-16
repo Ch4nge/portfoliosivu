@@ -9,6 +9,7 @@ import {
 
 class DesktopContainer extends React.Component {
   render() {
+    const { children } = this.props
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
         <Segment
@@ -48,6 +49,7 @@ class DesktopContainer extends React.Component {
           </Menu>
           <Heading />
         </Segment>
+        {children}
       </Responsive>
     )
   }

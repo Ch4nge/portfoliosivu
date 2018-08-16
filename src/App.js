@@ -4,10 +4,9 @@ import DesktopContainer from './containers/DesktopContainer'
 class App extends Component {
   render() {
     return (
-      <div>
-        <DesktopContainer />
+      <DesktopContainer>
         Hello world!
-      </div>
+      </DesktopContainer>
     )
   }
 }
