@@ -1,4 +1,5 @@
 import React from 'react'
+import Heading from '../components/Heading'
 import {
   Responsive,
   Menu,
@@ -45,6 +46,7 @@ class DesktopContainer extends React.Component {
               </Menu.Item>
             </Container>
           </Menu>
+          <Heading />
         </Segment>
       </Responsive>
     )
