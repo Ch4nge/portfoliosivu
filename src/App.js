@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { Container } from 'semantic-ui-react'
+import DesktopContainer from './containers/DesktopContainer'
 
 class App extends Component {
   render() {
     return (
-      <Container>
+      <div>
+        <DesktopContainer />
         Hello world!
-      </Container>
+      </div>
     )
   }
 }
