@@ -7,8 +7,12 @@ class App extends Component {
   render() {
     return (
       <DesktopContainer>
-        <Grid>
-          <Skills />
+        <Grid container stackable verticalAlign='middle'>
+          <Grid.Row>
+            <Grid.Column width='8'>
+              <Skills />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
       </DesktopContainer>
     )

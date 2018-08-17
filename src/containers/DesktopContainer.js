@@ -25,7 +25,7 @@ class DesktopContainer extends React.Component {
             secondary={true}
           >
             <Container>
-              <Menu.Item as='a'>
+              <Menu.Item as='a' active>
               Home
               </Menu.Item>
               <Menu.Item as='a'>
