@@ -4,15 +4,12 @@ import { Grid } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 
-class Skills extends React.Component {
-  render() {
-    const { skills } = this.props
-    return (
-      <Grid padded='vertically' divided container stackable verticalAlign='middle'>
-        {skills.map( s =>  <Skill key={'skill: '+s.id} id={s.id} /> )}
-      </Grid>
-    )
-  }
+const Skills = ({ skills }) => {
+  return (
+    <Grid padded='vertically' divided container stackable verticalAlign='middle'>
+      {skills.map( s =>  <Skill key={'skill: '+s.id} id={s.id} /> )}
+    </Grid>
+  )
 }
 
 const mapStateToProps = (state) => {
