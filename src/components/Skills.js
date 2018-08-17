@@ -6,8 +6,9 @@ import { connect } from 'react-redux'
 
 const Skills = ({ skills }) => {
   return (
-    <Grid padded='vertically' divided container stackable verticalAlign='middle'>
-      {skills.map( s =>  <Skill key={'skill: '+s.id} id={s.id} /> )}
+    <Grid padded='vertically' container stackable verticalAlign='middle'>
+      {skills.map( (s) =>  <Skill key={'skill: '+s.id} id={s.id} />
+      )}
     </Grid>
   )
 }

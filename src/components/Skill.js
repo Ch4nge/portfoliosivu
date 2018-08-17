@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Grid, Container, Header } from 'semantic-ui-react'
+import { Divider, Image, Grid, Container, Header } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 const Skill = ({ skill }) => {
@@ -18,6 +18,7 @@ const Skill = ({ skill }) => {
         </p>
         <a href={skill.gitLink}>{skill.gitText}</a>
       </Container>
+      <Divider />
     </Grid.Column>
   )
 }
