@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DesktopContainer from './containers/DesktopContainer'
 import Skills from './components/Skills'
 import About from './components/About'
+import Footer from './components/Footer'
 import { Divider } from 'semantic-ui-react'
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
         <Divider horizontal>Skills</Divider>
         <Skills />
         <Divider horizontal>Projects</Divider>
+        <Footer/>
       </DesktopContainer>
     )
   }
