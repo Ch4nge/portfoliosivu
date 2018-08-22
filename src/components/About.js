@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Image, Header, Container, Grid } from 'semantic-ui-react'
+import { Image, Header, Container, Grid } from 'semantic-ui-react'
 
 class About extends React.Component {
   render() {
@@ -19,8 +19,11 @@ class About extends React.Component {
             <Header as='h2'
               content='About this site'
               style={heaerStyle}/>
-            <p style={pStyle}> Imagine if you could create portfolio of sami hautamäki lightning fast.. </p>
-            <p style={pStyle}> Well.. Now it is possible! endpoints are: </p>
+            <p style={pStyle}> Tired of always asking Sami about his skills and projects
+              when you are making portfolio for him? Well.. we got the solution for you! </p>
+            <p style={pStyle}> With SamAPI you can get all project and skill info of Sami, endpoints are: </p>
+            <a> Linkki </a>
+            <a> Linkki </a>
           </Container>
         </Grid.Column>
         <Grid.Column width='6' floated='right'>

@@ -57,7 +57,7 @@ const initState = [
     title: 'Java / Spring',
     content:  'Java is the first language I learned and I think it\'s still my strongest' +
               ' programming language overall. I have created small projects with javafx and swing,' +
-              ' and small backends to school project with Spring.',
+              ' and small backends to school projects with Spring.',
     gitLink: 'http://github.com',
     gitText: 'My awesome game engine!'
   },

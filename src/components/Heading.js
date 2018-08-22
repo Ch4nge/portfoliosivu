@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Icon, Button, Container } from 'semantic-ui-react'
+import { Header, Button, Container } from 'semantic-ui-react'
 
 
 class Heading extends React.Component {
@@ -8,7 +8,7 @@ class Heading extends React.Component {
       <Container text textAlign='center'>
         <Header
           as='h1'
-          content='Sami Hautamäki'
+          content='SamAPI'
           inverted
           style={{
             fontSize: '4em',
@@ -17,7 +17,7 @@ class Heading extends React.Component {
             marginTop: '3em' }} />
         <Header
           as='h2'
-          content='Your companys new programmer'
+          content='Creating Sami Hautamäkis portfolios easily!'
           inverted
           style={{
             fontSize: '1.7em',
