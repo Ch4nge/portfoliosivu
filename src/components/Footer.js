@@ -16,7 +16,7 @@ class Footer extends React.Component {
         <p style={textSize}> +358 400366613 </p>
         <a style={{ fontSize: '2em' }}
           href='https://github.com/Ch4nge'>
-          <Icon color='white' name='github' /> Ch4nge
+          <Icon name='github' /> Ch4nge
         </a>
       </Segment>
     )

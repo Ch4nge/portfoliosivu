@@ -8,7 +8,7 @@ class Projects extends React.Component {
     const { projects } = this.props
     return (
       <Grid padded='vertically' container stackable verticalAlign='middle'>
-        {projects.map( (p) => <Project />)}
+        {projects.map( (p, i) => <Project key={'p'+i}/>)}
       </Grid>
     )
   }

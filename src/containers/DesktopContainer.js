@@ -14,7 +14,7 @@ class DesktopContainer extends React.Component {
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
         <Segment
           inverted
-          textAlignt='center'
+          textAlign='center'
           style={{ minHeight: 700, padding: '1em 0em' }}
           vertical
         >
