@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Button, Container } from 'semantic-ui-react'
+import { Header, Container } from 'semantic-ui-react'
 
 
 class Heading extends React.Component {
