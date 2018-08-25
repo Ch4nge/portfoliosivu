@@ -3,11 +3,14 @@ import { Divider, Grid, Header, Image, Container } from 'semantic-ui-react'
 
 class Project extends React.Component {
   render() {
+    const contentStyle = {
+      fontSize: '1.2em'
+    }
     return (
       <Grid.Row>
         <Grid.Column width={10}>
-          <Header > Moi </Header>
-          <Container>
+          <Header >Bus/Todo/Whatever -project</Header>
+          <Container style={contentStyle}>
             ToDo -list and Bust tracking on the same software! This one is created with
             Meteor and React, mainly for learning purposes only. I wasnt great React user
             when I created it, so code is not that pretty.

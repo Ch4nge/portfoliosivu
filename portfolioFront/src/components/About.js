@@ -6,7 +6,7 @@ class About extends React.Component {
     const pStyle = {
       fontSize: '1.4em'
     }
-    const heaerStyle = {
+    const headerStyle = {
       fontSize: '2em'
     }
     const gridStyle = {
@@ -18,7 +18,7 @@ class About extends React.Component {
           <Container>
             <Header as='h2'
               content='About this site'
-              style={heaerStyle}/>
+              style={headerStyle}/>
             <p style={pStyle}> Tired of always asking Sami about his skills and projects
               when you are making portfolio for him? Well.. we got the solution for you! </p>
             <p style={pStyle}> With SamAPI you can get all project and skill info of Sami, endpoints are: </p>

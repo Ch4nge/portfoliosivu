@@ -6,6 +6,7 @@ import {
   Container,
   Button,
   Segment } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
 
 class DesktopContainer extends React.Component {
   render() {
@@ -25,14 +26,14 @@ class DesktopContainer extends React.Component {
             secondary={true}
           >
             <Container>
-              <Menu.Item as='a' active>
-              Home
+              <Menu.Item active>
+                <NavLink to='/'>Home</NavLink>
               </Menu.Item>
-              <Menu.Item as='a'>
-              Blog
+              <Menu.Item>
+                <NavLink to='/blog'>Blog</NavLink>
               </Menu.Item>
-              <Menu.Item as='a'>
-              Coding activity
+              <Menu.Item>
+                <NavLink to='/activity'> Coding activity </NavLink>
               </Menu.Item>
               <Menu.Item position='right'>
                 <Button as='a' inverted>
