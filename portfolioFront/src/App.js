@@ -9,6 +9,7 @@ class App extends Component {
       <Router>
         <DesktopContainer>
           <Route exact path='/' render={() => <Home />} />
+          <Route path='/admin' render={() => <div> moi </div>} />
         </DesktopContainer>
       </Router>
     )

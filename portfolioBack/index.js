@@ -5,6 +5,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const config = require('./utils/config')
 const skillsRouter = require('./controllers/skills')
+const projectsRouter = require('./controllers/projects')
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/api/skills', skillsRouter)
+app.use('/api/projects', projectsRouter)
 
 mongoose.connect(config.mongoUrl)
   .then( () => {

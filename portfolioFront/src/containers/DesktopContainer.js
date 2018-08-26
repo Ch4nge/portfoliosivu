@@ -33,7 +33,7 @@ class DesktopContainer extends React.Component {
                 <NavLink to='/blog'>Blog</NavLink>
               </Menu.Item>
               <Menu.Item>
-                <NavLink to='/activity'> Coding activity </NavLink>
+                <NavLink to='/admin'>Admin</NavLink>
               </Menu.Item>
               <Menu.Item position='right'>
                 <Button as='a' inverted>

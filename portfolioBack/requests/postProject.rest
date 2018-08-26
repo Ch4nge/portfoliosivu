@@ -1,0 +1,9 @@
+http://localhost:3003
+Content-type: application/json
+POST /api/projects
+{
+  "title": "test",
+  "content": "test",
+  "moreInfo": "test",
+  "imageSrc": "test"
+}

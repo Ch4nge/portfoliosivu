@@ -1,0 +1,10 @@
+http://localhost:3003
+Content-type: application/json
+POST /api/skills
+{
+  "content": "apua",
+  "imageSrc": "test",
+  "title": "test",
+  "gitLink": "test",
+  "gitText": "test"
+}
