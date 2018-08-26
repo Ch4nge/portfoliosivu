@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Grid } from 'semantic-ui-react'
+import { Header, Form, Grid } from 'semantic-ui-react'
 import SkillForm from '../components/SkillForm'
 
 class Admin extends React.Component {
@@ -22,6 +22,7 @@ class Admin extends React.Component {
     return (
       <Grid padded='vertically' container stackable verticalAlign='middle'>
         <Grid.Column width={16}>
+          <Header as='h2'>Secret admin area </Header>
           <Form>
             <Form.Field
               onChange={this.onChangeHandler}
