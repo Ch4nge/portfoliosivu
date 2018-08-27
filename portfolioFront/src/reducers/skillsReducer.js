@@ -1,3 +1,5 @@
+import skillsService from '../services/skills'
+
 const initState = [
   {
     id: 0,
@@ -62,9 +64,26 @@ const initState = [
     gitText: 'My awesome game engine!'
   },
 ]
-const skillsReducer = (state = initState, action) => {
+console.log(initState)
+const skillsReducer = (state = [], action) => {
   console.log(action)
-  return state
+  switch(action.type){
+  case 'CREATESKILL':
+    return state.concat(action.skill)
+  default:
+    return state
+  }
+}
+
+export const addSkill = (newObject) => {
+  return async (dispatch) => {
+    const newSkill = await skillsService.create(newObject)
+    console.log(newSkill)
+    dispatch({
+      type: 'CREATESKILL',
+      skill: newSkill
+    })
+  }
 }
 
 export default skillsReducer

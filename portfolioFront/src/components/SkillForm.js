@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Input, TextArea, Form } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { addSkill }  from '../reducers/skillsReducer'
 
 class SkillForm extends React.Component {
   constructor() {
@@ -18,10 +20,22 @@ class SkillForm extends React.Component {
       [event.target.name]: [event.target.value][0]
     })
   }
+  onClickHandler = () => {
+    const { title, imageSrc, gitLink, gitText, content } = this.state
+    const obj = { title,imageSrc, gitLink, gitText, content }
+    console.log(obj)
+    this.props.addSkill(obj)
+    this.setState({
+      title: '',
+      imageSrc: '',
+      gitLink: '',
+      gitText: '',
+      content: ''
+    })
+  }
 
   render() {
     const { title, imageSrc, gitLink, gitText, content } = this.state
-    console.log(this.state)
     return (
       <Form>
         <Form.Field
@@ -58,10 +72,10 @@ class SkillForm extends React.Component {
           control={TextArea}
           label='Content'
           placeholder='Content' />
-        <Button color='green'>Add </Button>
+        <Button color='green' onClick={this.onClickHandler}>Add </Button>
       </Form>
     )
   }
 }
 
-export default SkillForm
+export default connect(null, { addSkill })( SkillForm )

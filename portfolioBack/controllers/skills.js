@@ -29,7 +29,7 @@ skillsRouter.post('/', async (req, res) => {
     return res.status(400).json({error: 'Skills info missing'})
   }
   const savedSkill = await skill.save()
-  return res.json(savedSkill)
+  return res.json(formatSkill(savedSkill))
   } catch(ex){
     res.status(500).json({error: 'something went wrong'})
   }
