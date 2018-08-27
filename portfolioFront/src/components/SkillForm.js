@@ -23,15 +23,16 @@ class SkillForm extends React.Component {
   onClickHandler = () => {
     const { title, imageSrc, gitLink, gitText, content } = this.state
     const obj = { title,imageSrc, gitLink, gitText, content }
-    console.log(obj)
-    this.props.addSkill(obj)
-    this.setState({
-      title: '',
-      imageSrc: '',
-      gitLink: '',
-      gitText: '',
-      content: ''
-    })
+    if(window.confirm(`Add new skill ${title}?`)){
+      this.props.addSkill(obj)
+      this.setState({
+        title: '',
+        imageSrc: '',
+        gitLink: '',
+        gitText: '',
+        content: ''
+      })
+    }
   }
 
   render() {
