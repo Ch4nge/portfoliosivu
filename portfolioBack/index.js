@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const config = require('./utils/config')
 const skillsRouter = require('./controllers/skills')
 const projectsRouter = require('./controllers/projects')
+const loginRouter = require('./controllers/login')
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json())
 
 app.use('/api/skills', skillsRouter)
 app.use('/api/projects', projectsRouter)
+app.use('/api/login', loginRouter)
 
 mongoose.connect(config.mongoUrl)
   .then( () => {

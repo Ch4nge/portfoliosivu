@@ -20,16 +20,23 @@ skillsRouter.get('/', async (req, res) => {
 
 skillsRouter.post('/', async (req, res) => {
   try {
-  const skill = new Skill(req.body)
-  if(skill.title === undefined,
-    skill.imageSrc === undefined,
-    skill.content === undefined,
-    skill.gitLink === undefined,
-    skill.gitText === undefined){
-    return res.status(400).json({error: 'Skills info missing'})
-  }
-  const savedSkill = await skill.save()
-  return res.json(formatSkill(savedSkill))
+    const skill = new Skill(req.body)
+    const token = req.token
+    const decoded = jwt.verify(token, process.env.SECRET)
+
+    if(!token || !decoded.id) {
+      return res.status(401).json({ error: 'bad token'})
+    }
+
+    if(skill.title === undefined,
+      skill.imageSrc === undefined,
+      skill.content === undefined,
+      skill.gitLink === undefined,
+      skill.gitText === undefined){
+      return res.status(400).json({error: 'Skills info missing'})
+    }
+    const savedSkill = await skill.save()
+    return res.json(formatSkill(savedSkill))
   } catch(ex){
     res.status(500).json({error: 'something went wrong'})
   }
