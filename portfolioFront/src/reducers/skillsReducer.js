@@ -68,6 +68,8 @@ console.log(initState)
 const skillsReducer = (state = [], action) => {
   console.log(action)
   switch(action.type){
+  case 'INITSKILLS':
+    return action.skills
   case 'CREATESKILL':
     return state.concat(action.skill)
   default:
@@ -82,6 +84,17 @@ export const addSkill = (newObject) => {
     dispatch({
       type: 'CREATESKILL',
       skill: newSkill
+    })
+  }
+}
+
+export const initSkills = () => {
+  return async (dispatch) => {
+    const skills = await skillsService.getAll()
+    console.log(skills)
+    dispatch({
+      type: 'INITSKILLS',
+      skills
     })
   }
 }
