@@ -17,7 +17,7 @@ class Heading extends React.Component {
             marginTop: '3em' }} />
         <Header
           as='h2'
-          content='Creating Sami Hautamäkis portfolios easily!'
+          content='Creating Sami Hautamäki&#39;s portfolios easily!'
           inverted
           style={{
             fontSize: '1.7em',
@@ -25,7 +25,6 @@ class Heading extends React.Component {
             marginTop: '1.5em',
           }}
         />
-
 
       </Container>
     )

@@ -4,13 +4,15 @@ import {
   Responsive,
   Menu,
   Container,
-  Button,
   Segment } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import { withRouter, NavLink } from 'react-router-dom'
+import LoginForm from '../components/LoginForm'
+import Logout from '../components/Logout'
+import { connect } from 'react-redux'
 
 class DesktopContainer extends React.Component {
   render() {
-    const { children } = this.props
+    const { user, children, activeNavi } = this.props
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
         <Segment
@@ -26,25 +28,19 @@ class DesktopContainer extends React.Component {
             secondary={true}
           >
             <Container>
-              <Menu.Item active>
+              <Menu.Item active={'home' === activeNavi}>
                 <NavLink to='/'>Home</NavLink>
               </Menu.Item>
-              <Menu.Item>
-                <NavLink to='/blog'>Blog</NavLink>
+              <Menu.Item active={'activity' === activeNavi}>
+                <NavLink to='/activity'>Activity</NavLink>
               </Menu.Item>
-              <Menu.Item>
-                <NavLink to='/admin'>Admin</NavLink>
-              </Menu.Item>
+              { user?
+                <Menu.Item active={'admin' === activeNavi}>
+                  <NavLink to='/admin'>Admin</NavLink>
+                </Menu.Item> : null
+              }
               <Menu.Item position='right'>
-                <Button as='a' inverted>
-                  Log in
-                </Button>
-                <Button
-                  as='a'
-                  inverted
-                  style={{ marginLeft: '0.5em' }}>
-                  Sign up
-                </Button>
+                {user ? <Logout /> : <LoginForm /> }
               </Menu.Item>
             </Container>
           </Menu>
@@ -56,4 +52,11 @@ class DesktopContainer extends React.Component {
   }
 }
 
-export default DesktopContainer
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    activeNavi: state.activeNavi
+  }
+}
+
+export default withRouter(connect(mapStateToProps)( DesktopContainer ))

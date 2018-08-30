@@ -10,6 +10,15 @@ const loginRouter = require('./controllers/login')
 
 const app = express()
 
+const extractToken = (req, res, next) => {
+  const authorization = req.get('authorization')
+  if (authorization && authorization.toLowerCase().startsWith('bearer')) {
+    req.token = authorization.substring(7)
+  }
+  next()
+}
+
+app.use(extractToken)
 app.use(cors())
 app.use(bodyParser.json())
 
@@ -29,7 +38,7 @@ const PORT = config.port
 const server = http.createServer(app)
 
 server.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`) 
+  console.log(`server running on port ${PORT}`)
 })
 
 server.on('close', () => {

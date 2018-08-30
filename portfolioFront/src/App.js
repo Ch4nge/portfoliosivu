@@ -1,26 +1,40 @@
 import React, { Component } from 'react'
-import DesktopContainer from './containers/DesktopContainer'
+import ResponsiveContainer from './containers/ResponsiveContainer'
 import Home from './pages/Home'
 import Admin from './pages/Admin'
+import Activity from './pages/Activity'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import { initSkills } from './reducers/skillsReducer'
+import { initUser } from './reducers/userReducer'
+import { initProjects } from './reducers/projectsReducer'
 import { connect } from 'react-redux'
+import skillsService from './services/skills'
+import projectsService from './services/projects'
 
 class App extends Component {
   componentDidMount() {
     this.props.initSkills()
+    this.props.initProjects()
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    if (loggedUserJSON){
+      const user = JSON.parse(loggedUserJSON)
+      this.props.initUser(user)
+      skillsService.setToken(user.token)
+      projectsService.setToken(user.token)
+    }
   }
 
   render() {
     return (
       <Router>
-        <DesktopContainer>
+        <ResponsiveContainer>
           <Route exact path='/' render={() => <Home />} />
           <Route path='/admin' render={() => <Admin />} />
-        </DesktopContainer>
+          <Route path='/activity' render={() => <Activity />} />
+        </ResponsiveContainer>
       </Router>
     )
   }
 }
 
-export default connect(null, { initSkills })( App )
+export default connect(null, { initProjects, initUser, initSkills })( App )

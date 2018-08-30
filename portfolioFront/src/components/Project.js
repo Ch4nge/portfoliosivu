@@ -1,26 +1,26 @@
 import React from 'react'
-import { Divider, Grid, Header, Image, Container } from 'semantic-ui-react'
+import { Icon, Divider, Grid, Header, Image, Container } from 'semantic-ui-react'
 
 class Project extends React.Component {
   render() {
+    const { project } = this.props
     const contentStyle = {
       fontSize: '1.2em'
     }
     return (
       <Grid.Row>
         <Grid.Column width={10}>
-          <Header >Bus/Todo/Whatever -project</Header>
-          <Container style={contentStyle}>
-            ToDo -list and Bust tracking on the same software! This one is created with
-            Meteor and React, mainly for learning purposes only. I wasnt great React user
-            when I created it, so code is not that pretty.
-          </Container>
+          <Header >{project.title}</Header>
+          <Container style={contentStyle}>{project.content}</Container>
         </Grid.Column>
         <Grid.Column width={6}>
-          <Image rounded src='https://github.com/Ch4nge/ReactProject/raw/master/pics/Gmap.png'/>
+          <Image rounded src={project.imageSrc}/>
         </Grid.Column>
-        <Grid.Column width={16}>
+        <Grid.Column width={16} style={{ marginTop:'1em' }}>
+          <a href={project.moreInfo}><Icon name='github' />Learn more! </a>
           <Divider />
+        </Grid.Column>
+        <Grid.Column>
         </Grid.Column>
       </Grid.Row>
     )

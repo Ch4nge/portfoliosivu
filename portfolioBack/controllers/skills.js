@@ -1,6 +1,7 @@
 const skillsRouter = require('express').Router()
 const mongoose = require('mongoose')
 const Skill = require('../models/skill')
+const jwt = require('jsonwebtoken')
 
 const formatSkill = (skill) => {
   return {
@@ -24,6 +25,7 @@ skillsRouter.post('/', async (req, res) => {
     const token = req.token
     const decoded = jwt.verify(token, process.env.SECRET)
 
+    console.log(decoded) 
     if(!token || !decoded.id) {
       return res.status(401).json({ error: 'bad token'})
     }
@@ -39,6 +41,24 @@ skillsRouter.post('/', async (req, res) => {
     return res.json(formatSkill(savedSkill))
   } catch(ex){
     res.status(500).json({error: 'something went wrong'})
+  }
+})
+
+skillsRouter.delete('/:id', async (req, res) => {
+  try {
+    const skill = await Skill.find({_id: req.params.id})
+    console.log(skill) 
+    const token = req.token
+    const decoded = jwt.verify(token, process.env.SECRET)
+
+    if(!token || !decoded.id) {
+      return res.status(401).json({ error: 'bad token'})
+    }
+    await skill[0].remove()
+
+    res.status(204).end()
+  } catch (e) {
+    res.status(500).json({ error: 'something went wrong'})
   }
 })
 

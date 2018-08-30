@@ -1,6 +1,11 @@
 import React from 'react'
 import { Header, Form, Grid } from 'semantic-ui-react'
 import SkillForm from '../components/SkillForm'
+import ProjectForm from '../components/ProjectForm'
+import AdminSkillList from '../components/AdminSkillList'
+import AdminProjectList from '../components/AdminProjectList'
+import { switchPage } from '../reducers/navReducer'
+import { connect } from 'react-redux'
 
 class Admin extends React.Component {
 
@@ -11,6 +16,10 @@ class Admin extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.props.switchPage('admin')
+  }
+
 
   onChangeHandler = (event) => {
     this.setState({
@@ -18,7 +27,7 @@ class Admin extends React.Component {
     })
   }
   render() {
-    console.log(this.state.formName)
+    const { formName } = this.state
     return (
       <Grid padded='vertically' container stackable verticalAlign='middle'>
         <Grid.Column width={16}>
@@ -35,11 +44,14 @@ class Admin extends React.Component {
           </Form>
         </Grid.Column>
         <Grid.Column width={16}>
-          <SkillForm />
+          {formName === 'skill' ? <SkillForm /> : <ProjectForm />}
+        </Grid.Column>
+        <Grid.Column width={16}>
+          {formName === 'skill' ? <AdminSkillList /> : <AdminProjectList />}
         </Grid.Column>
       </Grid>
     )
   }
 }
 
-export default Admin
+export default connect(null, { switchPage })( Admin )

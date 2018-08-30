@@ -19,10 +19,11 @@ class About extends React.Component {
             <Header as='h2'
               content='About this site'
               style={headerStyle}/>
-            <p style={pStyle}> Tired of always asking Sami about his skills and projects
-              when you are making portfolio for him? Well.. we got the solution for you! </p>
-            <p style={pStyle}> With SamAPI you can get all project and skill info of Sami, endpoints are: </p>
+            <p style={pStyle}>Creating portfolio for Sami? Tired of constantly asking about his skillset
+              and projects? We got the solution for you!</p>
+            <p style={pStyle}>With SamAPI your very own portfolio of Sami is just few clicks away. Endpoints are:</p>
             <a> Linkki </a>
+            <br/>
             <a> Linkki </a>
           </Container>
         </Grid.Column>

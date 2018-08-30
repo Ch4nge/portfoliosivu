@@ -72,6 +72,8 @@ const skillsReducer = (state = [], action) => {
     return action.skills
   case 'CREATESKILL':
     return state.concat(action.skill)
+  case 'DELETESKILL':
+    return state.filter(s => s.id !== action.id)
   default:
     return state
   }
@@ -95,6 +97,16 @@ export const initSkills = () => {
     dispatch({
       type: 'INITSKILLS',
       skills
+    })
+  }
+}
+
+export const deleteSkill = (id) => {
+  return async (dispatch) => {
+    await skillsService.remove(id)
+    dispatch({
+      type: 'DELETESKILL',
+      id: id
     })
   }
 }
