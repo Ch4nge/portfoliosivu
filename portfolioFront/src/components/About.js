@@ -22,7 +22,7 @@ class About extends React.Component {
             <p style={pStyle}>Creating portfolio for Sami? Tired of constantly asking about his skillset
               and projects? We got the solution for you!</p>
             <p style={pStyle}>With SamAPI your very own portfolio of Sami is just few clicks away. Endpoints are:</p>
-            <a href='/api/skils'> Skills </a>
+            <a href='/api/skills'> Skills </a>
             <br/>
             <a href='/api/projects'> Projects </a>
           </Container>
