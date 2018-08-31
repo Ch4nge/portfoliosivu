@@ -22,13 +22,13 @@ class About extends React.Component {
             <p style={pStyle}>Creating portfolio for Sami? Tired of constantly asking about his skillset
               and projects? We got the solution for you!</p>
             <p style={pStyle}>With SamAPI your very own portfolio of Sami is just few clicks away. Endpoints are:</p>
-            <a> Linkki </a>
+            <a href='/api/skils'> Skills </a>
             <br/>
-            <a> Linkki </a>
+            <a href='/api/projects'> Projects </a>
           </Container>
         </Grid.Column>
         <Grid.Column width='6' floated='right'>
-          <Image bordered rounded size='small' src='http://16tiko1a.projects.tamk.fi/img/sami.png'/>
+          <Image bordered rounded size='small' src='https://i.gyazo.com/d245d985d7df13d08a6111878f5b78a2.png'/>
         </Grid.Column>
       </Grid>
     )

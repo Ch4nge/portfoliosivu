@@ -29,8 +29,8 @@ class App extends Component {
       <Router>
         <ResponsiveContainer>
           <Route exact path='/' render={() => <Home />} />
-          <Route path='/admin' render={() => <Admin />} />
-          <Route path='/activity' render={() => <Activity />} />
+          <Route exact path='/admin' render={() => <Admin />} />
+          <Route exact path='/activity' render={() => <Activity />} />
         </ResponsiveContainer>
       </Router>
     )

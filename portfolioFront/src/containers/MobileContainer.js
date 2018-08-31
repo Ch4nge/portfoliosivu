@@ -62,7 +62,7 @@ class MobileContainer extends React.Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              <Heading />
+              <Heading mobile />
             </Segment>
 
             {children}

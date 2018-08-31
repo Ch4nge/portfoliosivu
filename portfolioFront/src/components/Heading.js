@@ -4,6 +4,7 @@ import { Header, Container } from 'semantic-ui-react'
 
 class Heading extends React.Component {
   render() {
+    const { mobile } = this.props
     return (
       <Container text textAlign='center'>
         <Header
@@ -11,18 +12,18 @@ class Heading extends React.Component {
           content='SamAPI'
           inverted
           style={{
-            fontSize: '4em',
+            fontSize: mobile ? '2em' : '4em',
             fontWeight: 'normal',
             marginBottom: 0,
-            marginTop: '3em' }} />
+            marginTop: mobile ? '1.5em' : '3em' }} />
         <Header
           as='h2'
-          content='Creating Sami Hautamäki&#39;s portfolios easily!'
+          content='Creating Sami Hautamäki&#39;s portfolios since 2018'
           inverted
           style={{
-            fontSize: '1.7em',
+            fontSize: mobile ? '1.5em' : '1.7em',
             fontWeight: 'normal',
-            marginTop: '1.5em',
+            marginTop: mobile ? '0.5em' : '1.5em',
           }}
         />
 
