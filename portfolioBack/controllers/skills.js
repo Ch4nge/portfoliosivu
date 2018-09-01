@@ -16,7 +16,7 @@ const formatSkill = (skill) => {
 
 skillsRouter.get('/', async (req, res) => {
   const skills = await Skill.find({})
-  res.json(skills.map(formatSkill))
+  return res.json(skills.map(formatSkill))
 })
 
 skillsRouter.post('/', async (req, res) => {

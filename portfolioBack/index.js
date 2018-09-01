@@ -22,11 +22,10 @@ app.use(extractToken)
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use(express.static('build'))
 app.use('/api/skills', skillsRouter)
 app.use('/api/projects', projectsRouter)
 app.use('/api/login', loginRouter)
-
+app.use(express.static('build'))
 
 mongoose.connect(config.mongoUrl)
   .then( () => {

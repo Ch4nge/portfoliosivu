@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3003/api/skills'
+const baseUrl = '/api/skills'
 
 let token = null
 
